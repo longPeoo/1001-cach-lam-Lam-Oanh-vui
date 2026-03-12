@@ -6,7 +6,7 @@
     <title>1001 cách làm Lam Oanh bất ngờ</title>
     <meta
       name="description"
-      content="Giao diện hồng - đen hiện đại, dễ thương với câu nói trend và gallery ảnh tùy chỉnh."
+      content="Giao diện hồng - đen hiện đại, dễ thương với câu nói trend, ảnh, video và hiệu ứng pháo hoa."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +17,19 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div id="intro-screen" class="intro-screen">
+      <div class="intro-card">
+        <p class="intro-chip">Surprise Loading</p>
+        <h2>Xin chào Lam Oanh, anh là Long</h2>
+        <p>Đợi một chút nhé, mình mở cánh cửa bất ngờ ngay đây.</p>
+        <button id="enter-site" class="btn-primary" type="button">
+          Bắt đầu thôi
+        </button>
+      </div>
+    </div>
+
+    <canvas id="firework-canvas" class="firework-canvas" aria-hidden="true"></canvas>
+
     <div class="background-glow" aria-hidden="true">
       <span class="blob blob-1"></span>
       <span class="blob blob-2"></span>
@@ -30,9 +43,14 @@
         <p class="hero-subtitle">
           Trendy, ngọt ngào và đủ độ thả thính để tim rung rinh.
         </p>
-        <button id="new-spotlight" class="btn-primary" type="button">
-          Xem câu nói bất ngờ khác
-        </button>
+        <div class="hero-actions">
+          <button id="new-spotlight" class="btn-primary" type="button">
+            Xem câu nói bất ngờ khác
+          </button>
+          <button id="toggle-fireworks" class="btn-outline" type="button">
+            Tắt pháo hoa 3D
+          </button>
+        </div>
       </header>
 
       <section class="spotlight reveal">
@@ -49,29 +67,34 @@
         <div id="quote-grid" class="quote-grid" aria-live="polite"></div>
       </section>
 
-      <section class="gallery reveal">
+      <section class="media reveal">
         <div class="gallery-title">
-          <h2>Gallery ảnh bất ngờ</h2>
+          <h2>Kho ảnh và video của tụi mình</h2>
           <p>
-            Bạn có thể thay URL ảnh trực tiếp tại đây hoặc sửa mảng
-            <code>DEFAULT_IMAGE_URLS</code> trong <code>script.js</code>.
+            Bạn có thể đưa file vào thư mục <code>assets/media</code> rồi nhập đường
+            dẫn kiểu <code>./assets/media/ten-file.jpg</code> hoặc
+            <code>./assets/media/ten-video.mp4</code>.
           </p>
         </div>
 
-        <form id="image-form" class="image-form">
+        <form id="media-form" class="image-form">
+          <select id="media-type" aria-label="Chọn loại media">
+            <option value="image">Ảnh</option>
+            <option value="video">Video</option>
+          </select>
           <input
-            id="image-url"
-            type="url"
-            placeholder="Dán URL ảnh tại đây..."
+            id="media-path"
+            type="text"
+            placeholder="Dán URL hoặc đường dẫn local..."
             required
           />
-          <button class="btn-secondary" type="submit">Thêm ảnh</button>
-          <button id="reset-images" class="btn-outline" type="button">
-            Reset ảnh mẫu
+          <button class="btn-secondary" type="submit">Thêm media</button>
+          <button id="reset-media" class="btn-outline" type="button">
+            Reset mẫu
           </button>
         </form>
 
-        <div id="gallery-grid" class="gallery-grid" aria-live="polite"></div>
+        <div id="media-grid" class="gallery-grid" aria-live="polite"></div>
       </section>
     </main>
 

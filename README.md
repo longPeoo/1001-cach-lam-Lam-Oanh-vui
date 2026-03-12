@@ -4,27 +4,40 @@ Giao dien tinh theo theme hong + den, hien dai va de thuong, gom:
 
 - Tieu de hero: `1001 cach lam Lam Oanh bat ngo`
 - Danh sach cau noi trend 50/50: tinh yeu va tha thinh
-- Gallery anh co the them/xoa URL truc tiep tren giao dien
-- Luu URL anh bang `localStorage`
+- Man hinh chao dau trang: `Xin chao Lam Oanh, anh la Long`
+- Fireworks 3D (canvas) co nut bat/tat
+- Kho media (anh + video) co the them/xoa duong dan
+- Video co nut bat/tat tieng ngay tren moi the video
+- Luu danh sach media bang `localStorage`
+
+## Them anh/video cua ban vao GitHub
+
+1. Dat file vao thu muc `assets/media/`.
+2. Tren giao dien, nhap duong dan local:
+   - `./assets/media/ten-anh.jpg`
+   - `./assets/media/ten-video.mp4`
+3. Hoac nhap URL online (https://...).
 
 ## Chinh cau noi
 
-Mo file `script.js`, sua mang `QUOTES`.
+Mo `script.js`, sua mang `QUOTES`.
 
-## Chinh anh mac dinh
+## Chinh media mac dinh
 
-Mo file `script.js`, sua mang `DEFAULT_IMAGE_URLS`.
+Mo `script.js`, sua mang `DEFAULT_MEDIA_ITEMS`.
 
 ## Deploy len GitHub Pages
 
 Project da co workflow tai `.github/workflows/pages.yml`.
 
-1. Tao repository tren GitHub.
-2. Day toan bo code len nhanh `main`.
-3. Vao `Settings` -> `Pages` -> `Build and deployment`, chon `Source: GitHub Actions`.
-4. Cho workflow chay xong, GitHub se tra link host dang:
-   `https://<github-username>.github.io/<repo-name>/`
+1. Day code len nhanh `main`.
+2. Vao `Settings` -> `Pages`, chon `Source: GitHub Actions`.
+3. Vao `Settings` -> `Actions` -> `General`, chon `Workflow permissions: Read and write permissions`.
+4. Re-run workflow neu can.
+
+Site mac dinh:
+`https://<github-username>.github.io/<repo-name>/`
 
 ## Chay local
 
-Chi can mo `index.html` bang trinh duyet.
+Mo `index.html` bang trinh duyet.
