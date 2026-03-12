@@ -112,15 +112,18 @@ body.intro-active {
   left: 0;
   top: 0;
   z-index: 5;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   display: grid;
   place-items: center;
-  font-size: 42px;
-  line-height: 1;
-  color: #000000;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
   text-shadow: none;
-  font-family: "Sora", sans-serif;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0%200%2032%2029.6'%3E%3Cpath fill='%23000000' d='M23.6,0c-3,0-5.7,1.4-7.4,3.7C14.5,1.4,11.8,0,8.8,0C3.9,0,0,3.9,0,8.8c0,9.6,16.2,20.8,16.2,20.8S32.4,18.4,32.4,8.8C32.4,3.9,28.5,0,23.6,0z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   pointer-events: none;
   user-select: none;
   animation: heartBeat 0.82s ease-in-out infinite;
@@ -661,9 +664,8 @@ code {
   }
 
   .bouncing-heart {
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
+    width: 42px;
+    height: 42px;
   }
 
   .blob-1,
