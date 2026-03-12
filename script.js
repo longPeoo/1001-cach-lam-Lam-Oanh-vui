@@ -12,33 +12,33 @@
 // 50 spotlight placeholders: sua tung item de gan cau noi + anh/video cu the.
 const SPOTLIGHT_ITEMS = [
   { id: "01", type: "loi-chuc", text: "Ảnh này đẹp thôi anh không biết ý nghĩa", mediaType: "image", mediaSrc: "./assets/media/31.jpg" },
-  { id: "02", type: "doc-thoai", text: "Rân chơi pắn thuốc lào :)", mediaType: "image", mediaSrc: "./assets/media/1.jpg" },
+  { id: "02", type: "doc-thoai", text: "Rân chơi pắn thuốc lào :)", mediaType: "image", mediaSrc: "./assets/media/1.JPG" },
   { id: "03", type: "loi-chuc", text: "Áp lực quá thì vào đây ngắm ảnh nhé, không thì nói anh cũng được!", mediaType: "image", mediaSrc: "./assets/media/32.jpg" },
-  { id: "04", type: "doc-thoai", text: "Chỉ là 1 cuộc nói chuyện vô tri", mediaType: "video", mediaSrc: "./assets/media/2-4.mp4" },
+  { id: "04", type: "doc-thoai", text: "Chỉ là 1 cuộc nói chuyện vô tri", mediaType: "video", mediaSrc: "./assets/media/2-4.MP4" },
   { id: "05", type: "loi-chuc", text: "++++++++ thật nhiều niềm vui", mediaType: "image", mediaSrc: "./assets/media/33.jpg" },
-  { id: "06", type: "doc-thoai", text: "Lam Oanh và cơ bắp cuồn cuộn của cô ấy", mediaType: "image", mediaSrc: "./assets/media/2.jpg" },
+  { id: "06", type: "doc-thoai", text: "Lam Oanh và cơ bắp cuồn cuộn của cô ấy", mediaType: "image", mediaSrc: "./assets/media/2.JPG" },
   { id: "07", type: "loi-chuc", text: "Ngắm biển cho nó trầm lại tí nếu cần nhé", mediaType: "image", mediaSrc: "./assets/media/34.jpg" },
-  { id: "08", type: "doc-thoai", text: "+1 thông tin Lam Oanh từng học Y", mediaType: "image", mediaSrc: "./assets/media/3.jpg" },
+  { id: "08", type: "doc-thoai", text: "+1 thông tin Lam Oanh từng học Y", mediaType: "image", mediaSrc: "./assets/media/3.JPG" },
   { id: "09", type: "doc-thoai", text: "Không rõ là Lam Oanh thích được gọi là 🐰 có đúng k", mediaType: "image", mediaSrc: "./assets/media/24.jpg" },
-  { id: "10", type: "doc-thoai", text: "Lam Oanh thích uống trà đá TN", mediaType: "image", mediaSrc: "./assets/media/4.jpg" },
+  { id: "10", type: "doc-thoai", text: "Lam Oanh thích uống trà đá TN", mediaType: "image", mediaSrc: "./assets/media/4.JPG" },
   { id: "11", type: "loi-chuc", text: "Mong em đến được nhiều nơi khám phá được nhiều thứ em thích", mediaType: "image", mediaSrc: "./assets/media/35.jpg" },
-  { id: "12", type: "doc-thoai", text: "Lam Oanh thích chế ảnh (cũng chưa chắc lắm)", mediaType: "image", mediaSrc: "./assets/media/5.jpg" },
-  { id: "13", type: "loi-chuc", text: "Mỗi bước chân đều có người đồng hành nè", mediaType: "image", mediaSrc: "./assets/media/8.jpg" },
-  { id: "14", type: "doc-thoai", text: "Lam Oanh thích những điều dễ thương", mediaType: "image", mediaSrc: "./assets/media/6.jpg" },
+  { id: "12", type: "doc-thoai", text: "Lam Oanh thích chế ảnh (cũng chưa chắc lắm)", mediaType: "image", mediaSrc: "./assets/media/5.JPG" },
+  { id: "13", type: "loi-chuc", text: "Mỗi bước chân đều có người đồng hành nè", mediaType: "image", mediaSrc: "./assets/media/8.JPG" },
+  { id: "14", type: "doc-thoai", text: "Lam Oanh thích những điều dễ thương", mediaType: "image", mediaSrc: "./assets/media/6.JPG" },
   { id: "15", type: "loi-chuc", text: "Cứ iu đời vậy là tốt rui!!!!", mediaType: "image", mediaSrc: "./assets/media/36.jpg" },
-  { id: "16", type: "doc-thoai", text: "Lam Oanh giúp đỡ mọi người", mediaType: "image", mediaSrc: "./assets/media/7.jpg" },
+  { id: "16", type: "doc-thoai", text: "Lam Oanh giúp đỡ mọi người", mediaType: "image", mediaSrc: "./assets/media/7.JPG" },
   { id: "17", type: "loi-chuc", text: "Iu bản thân, iu đời, iu vạn vật", mediaType: "image", mediaSrc: "./assets/media/39.jpg" },
   { id: "18", type: "doc-thoai", text: "Trông vậy mà ở ngoài rõ hiền lành", mediaType: "image", mediaSrc: "./assets/media/9.jpg" },
   { id: "19", type: "loi-chuc", text: "Ngắm cảnh đi để cho thư giãn đầu óc (nếu cần nhá)", mediaType: "image", mediaSrc: "./assets/media/38.jpg" },
-  { id: "20", type: "doc-thoai", text: "Lam Oanh lập đàn cầu nắng 🤣🤣", mediaType: "video", mediaSrc: "./assets/media/3-2.mp4" },
+  { id: "20", type: "doc-thoai", text: "Lam Oanh lập đàn cầu nắng 🤣🤣", mediaType: "video", mediaSrc: "./assets/media/3-2.MP4" },
   { id: "21", type: "loi-chuc", text: "Thành công trong mọi thứ nè", mediaType: "image", mediaSrc: "./assets/media/40.jpg" },
   { id: "22", type: "doc-thoai", text: "Anh biết Lam Oanh có 2 hình xăm", mediaType: "image", mediaSrc: "./assets/media/10.jpg" },
   { id: "23", type: "loi-chuc", text: "Nếu bực điều gì thì: nhịn 1 giờ sóng yên gió lặng, lui 1 bước biển rộng trời cao", mediaType: "image", mediaSrc: "./assets/media/41.jpg" },
-  { id: "24", type: "doc-thoai", text: "Lam Oanh và anh Say (anh k nhớ rõ tên)", mediaType: "video", mediaSrc: "./assets/media/3-1.mp4" },
+  { id: "24", type: "doc-thoai", text: "Lam Oanh và anh Say (anh k nhớ rõ tên)", mediaType: "video", mediaSrc: "./assets/media/3-1.MP4" },
   { id: "25", type: "loi-chuc", text: "Con này trông buồn cười nên hi vọng đủ làm em cười", mediaType: "image", mediaSrc: "./assets/media/42.jpg" },
   { id: "26", type: "doc-thoai", text: "Lam Oanh và cốc matcha à?", mediaType: "image", mediaSrc: "./assets/media/11.jpg" },
   { id: "27", type: "loi-chuc", text: "Ăn tất cả món ngon mà mình thích!", mediaType: "image", mediaSrc: "./assets/media/43.jpg" },
-  { id: "28", type: "doc-thoai", text: "Xinh rồi không có gì để bàn cả!", mediaType: "video", mediaSrc: "./assets/media/12.jpg" },
+  { id: "28", type: "doc-thoai", text: "Xinh rồi không có gì để bàn cả!", mediaType: "image", mediaSrc: "./assets/media/12.jpg" },
   { id: "29", type: "loi-chuc", text: "Chân cứng đá mềm trên mọi hành trình ha", mediaType: "image", mediaSrc: "./assets/media/50.jpg" },
   { id: "30", type: "doc-thoai", text: "Cổ vui mà cười tít mắt 😁", mediaType: "image", mediaSrc: "./assets/media/13.jpg" },
   { id: "31", type: "loi-chuc", text: "Luôn có tấm lòng lương thiện giúp đỡ mọi người nữa nè", mediaType: "image", mediaSrc: "./assets/media/49.jpg" },
@@ -631,7 +631,6 @@ renderMedia();
 
 startFireworks();
 startHeartMotion();
-
 
 
 
