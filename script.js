@@ -50,11 +50,9 @@ const resetMediaBtn = document.querySelector("#reset-media");
 
 const introScreen = document.querySelector("#intro-screen");
 const enterSiteBtn = document.querySelector("#enter-site");
-const toggleFireworksBtn = document.querySelector("#toggle-fireworks");
 const fireworkCanvas = document.querySelector("#firework-canvas");
 
 let mediaItems = loadMediaItems();
-let fireworksEnabled = true;
 
 const fireworks = {
   ctx: fireworkCanvas.getContext("2d"),
@@ -314,14 +312,15 @@ function randomBetween(min, max) {
 
 function spawnBurst() {
   const x = randomBetween(fireworks.width * 0.15, fireworks.width * 0.85);
-  const y = randomBetween(fireworks.height * 0.1, fireworks.height * 0.55);
+  const y = randomBetween(fireworks.height * 0.08, fireworks.height * 0.55);
   const colors = ["#ff3aa7", "#ff9ad9", "#ffd4ef", "#ff74c5", "#ffd9ef"];
-  const count = 65;
+  const count = 120;
 
   for (let i = 0; i < count; i += 1) {
     const theta = Math.random() * Math.PI * 2;
     const phi = Math.acos(2 * Math.random() - 1);
-    const speed = randomBetween(1.4, 4.6);
+    const speed = randomBetween(2.6, 7.4);
+    const life = randomBetween(62, 102);
     const vx = Math.sin(phi) * Math.cos(theta) * speed;
     const vy = Math.cos(phi) * speed;
     const vz = Math.sin(phi) * Math.sin(theta) * speed;
@@ -329,20 +328,20 @@ function spawnBurst() {
     fireworks.particles.push({
       x,
       y,
-      z: randomBetween(-80, 120),
+      z: randomBetween(-140, 180),
       vx,
       vy,
       vz,
-      life: randomBetween(45, 75),
-      maxLife: randomBetween(45, 75),
-      size: randomBetween(1.6, 3.8),
+      life,
+      maxLife: life,
+      size: randomBetween(3.2, 7.8),
       color: colors[Math.floor(Math.random() * colors.length)]
     });
   }
 }
 
 function drawParticle(particle) {
-  const perspective = 420 / (420 + particle.z);
+  const perspective = 520 / (520 + particle.z);
   if (perspective <= 0) {
     return;
   }
@@ -372,7 +371,7 @@ function updateParticles() {
 
   fireworks.particles.forEach((particle) => {
     particle.life -= 1;
-    particle.vy += 0.04;
+    particle.vy += 0.055;
     particle.vx *= 0.99;
     particle.vz *= 0.99;
     particle.x += particle.vx;
@@ -389,8 +388,11 @@ function animateFireworks(time) {
 
   fireworks.ctx.clearRect(0, 0, fireworks.width, fireworks.height);
 
-  if (fireworksEnabled && time - fireworks.lastBurst > 420) {
+  if (time - fireworks.lastBurst > 280) {
     spawnBurst();
+    if (Math.random() > 0.55) {
+      spawnBurst();
+    }
     fireworks.lastBurst = time;
   }
 
@@ -404,18 +406,6 @@ function startFireworks() {
   }
   fireworks.running = true;
   fireworks.rafId = window.requestAnimationFrame(animateFireworks);
-}
-
-function stopFireworks() {
-  fireworks.running = false;
-  if (fireworks.rafId) {
-    window.cancelAnimationFrame(fireworks.rafId);
-  }
-  fireworks.ctx.clearRect(0, 0, fireworks.width, fireworks.height);
-}
-
-function updateFireworkButton() {
-  toggleFireworksBtn.textContent = fireworksEnabled ? "Tat phao hoa 3D" : "Bat phao hoa 3D";
 }
 
 mediaForm.addEventListener("submit", (event) => {
@@ -465,31 +455,13 @@ randomQuoteBtn.addEventListener("click", pickSpotlightQuote);
 
 enterSiteBtn.addEventListener("click", closeIntro);
 
-toggleFireworksBtn.addEventListener("click", () => {
-  fireworksEnabled = !fireworksEnabled;
-  updateFireworkButton();
-
-  if (fireworksEnabled) {
-    startFireworks();
-  } else {
-    stopFireworks();
-  }
-});
-
 window.addEventListener("resize", resizeFireworkCanvas);
-
-if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  fireworksEnabled = false;
-}
 
 document.body.classList.add("intro-active");
 resizeFireworkCanvas();
-updateFireworkButton();
 
 renderQuotes();
 pickSpotlightQuote();
 renderMedia();
 
-if (fireworksEnabled) {
-  startFireworks();
-}
+startFireworks();
