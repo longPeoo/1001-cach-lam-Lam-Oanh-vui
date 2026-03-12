@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1001 cách làm Lam Oanh bất ngờ</title>
+    <meta
+      name="description"
+      content="Giao diện hồng - đen hiện đại, dễ thương với câu nói trend và gallery ảnh tùy chỉnh."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Sora:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="background-glow" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+
+    <main class="page-shell">
+      <header class="hero reveal">
+        <p class="hero-chip">Pink x Black Edition</p>
+        <h1>1001 cách làm Lam Oanh bất ngờ</h1>
+        <p class="hero-subtitle">
+          Trendy, ngọt ngào và đủ độ thả thính để tim rung rinh.
+        </p>
+        <button id="new-spotlight" class="btn-primary" type="button">
+          Xem câu nói bất ngờ khác
+        </button>
+      </header>
+
+      <section class="spotlight reveal">
+        <h2>Câu nói spotlight</h2>
+        <blockquote id="spotlight-quote">
+          Em không cần trend mới, vì em đã là trend anh mê nhất.
+        </blockquote>
+        <p id="spotlight-tag" class="spotlight-tag">#thảthính</p>
+      </section>
+
+      <section class="quotes reveal">
+        <h2>Kho câu nói trend 50/50</h2>
+        <p class="section-note">Một nửa tình yêu, một nửa thả thính.</p>
+        <div id="quote-grid" class="quote-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="gallery reveal">
+        <div class="gallery-title">
+          <h2>Gallery ảnh bất ngờ</h2>
+          <p>
+            Bạn có thể thay URL ảnh trực tiếp tại đây hoặc sửa mảng
+            <code>DEFAULT_IMAGE_URLS</code> trong <code>script.js</code>.
+          </p>
+        </div>
+
+        <form id="image-form" class="image-form">
+          <input
+            id="image-url"
+            type="url"
+            placeholder="Dán URL ảnh tại đây..."
+            required
+          />
+          <button class="btn-secondary" type="submit">Thêm ảnh</button>
+          <button id="reset-images" class="btn-outline" type="button">
+            Reset ảnh mẫu
+          </button>
+        </form>
+
+        <div id="gallery-grid" class="gallery-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <p>Made with pink vibes + black mood.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
